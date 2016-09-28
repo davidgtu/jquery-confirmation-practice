@@ -2,9 +2,9 @@
 //hide and show them at appropiate times
 
 
-var $password = $("#password");
-var $confirmPassword = $("#confirm_password");
-var $username = $("#username");
+const $password = $("#password");
+const $confirmPassword = $("#confirm_password");
+const $username = $("#username");
 // hide hints
 
 $("form span").hide();
@@ -21,7 +21,7 @@ function arePasswordsMatching() {
   return $password.val() === $confirmPassword.val()
 }
 
-function canSubmit(){
+function canSubmit() {
   return isPasswordValid() && arePasswordsMatching() && isUsernamePresent();
 }
 
@@ -38,14 +38,14 @@ function passwordEvent() {
   //else show hint
 
 function confirmPasswordEvt() {
-  if(arePasswordsMatching()){
+  if(arePasswordsMatching()) {
     $confirmPassword.next().hide()
   } else {
     $confirmPassword.next().show();
   }
 }
 
-function enableSubmitEvt(){
+function enableSubmitEvt() {
   $("#submit").prop("disabled", !canSubmit())
 }
 
